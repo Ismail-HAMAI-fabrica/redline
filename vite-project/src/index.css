@@ -1,0 +1,314 @@
+@font-face {
+    font-family: 'Brush Script MT';
+    src: url('./fonts/brush_script.ttf') format('truetype'); /* Update the path and file name if necessary */
+  }
+  body{
+    background-color: #219EBC;
+  }
+.with {
+    font-family: 'Brush Script MT', cursive;
+  }
+.solle{
+  font-family: 'Changa One', cursive;
+font-family: 'Josefin Sans', sans-serif;
+}
+  .card {
+    color: white;
+    width: 190px;
+    height: 254px;
+    background: #FB8500;
+    transition: all 0.4s;
+    border-radius: 10px;
+    border: white 0.4px solid;
+    box-shadow: 0px 0px 10px 5px  rgba(255, 183, 3, 0.705);
+    font-size: 30px;
+    font-weight: 900;
+  }
+  
+  .card:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px 5px  rgba(255, 183, 3, 0.705);
+    box-shadow: 0px 0px 15px 10px  rgba(255, 183, 3, 0.705);
+    box-shadow: 0px 0px 20px 15px  rgba(255, 183, 3, 0.705);
+    background: #FFB703;
+  }
+  
+  .first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 15px;
+  }
+  
+  .card:hover .first-content {
+    height: 0px;
+    opacity: 0;
+  }
+  
+  .second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: rotate(90deg) scale(-1);
+  }
+  
+  .card:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1rem;
+    transform: rotate(0deg);
+  }
+  /* --------------------- */
+  .card21 {
+    background-image: url("../public/shekenfood.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 300px;
+    height: 270px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 2s;
+    
+    box-shadow: 15px 15px 30px rgb(8, 69, 94),
+    -15px -15px 30px rgb(119, 228, 255);
+  }
+  .card22 {
+    background-image: url("../public/crockpot-whole-chicken-1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 300px;
+    height: 270px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 2s;
+    box-shadow: 15px 15px 30px rgb(8, 69, 94),
+    -15px -15px 30px rgb(119, 228, 255);
+  }
+  .card23 {
+    background-image: url("../public/easyrecipe-921.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 300px;
+    height: 270px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 2s;
+    box-shadow: 15px 15px 30px rgb(8, 69, 94),
+    -15px -15px 30px rgb(119, 228, 255);
+  }
+  
+  
+  
+  .card2::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgba(251, 133, 0, 0.85);
+    transition: all 0.5s;
+    box-shadow: 20px 20px 35px rgb(8, 69, 94);
+  }
+  
+
+  
+  .card2::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100%  0 15px;
+  }
+  
+  .card2:hover::before,
+  .card2:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+  }
+  
+  .card21:hover:after {
+    
+    content: "Registration made easy and fast";
+    text-align: center;
+
+    font-size: 1.2rem;
+  }
+  .card22:hover:after {
+    
+    content: " Choose from a variety of options with varying levels of difficulty";
+    text-align: center;
+    
+    font-size: 1.2rem;
+  }
+  .card23:hover:after {
+    
+    content: "you will receive a confirmation call to verify your purchase and confirm your order details";
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* ---------------------------------------- */
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .flotimage {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .flotimage:hover img {
+    animation: floating 1s infinite;
+  }
+
+
+  /* --------------------------------------- */
+  .cta {
+    border: none;
+    background: none;
+  }
+  
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    color: white;
+    padding-bottom: 20px;
+  }
+  
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* -------------------------------- */
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .btn::after {
+    content: 'Back';
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    font-size: 15px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+    top: 115%;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+    transition: .2s linear;
+  }
+  
+  .icon path {
+    fill: white;
+    transition: .2s linear;
+  }
+  
+  .btn:hover > .icon {
+    transform: scale(1.2);
+  }
+  
+  .btn:hover > .icon path {
+    fill: rgb(177, 139, 189);
+  }
+  
+  .btn:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: 105%;
+  }
+  
+  
