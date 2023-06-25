@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-
-const Sidebar = ({children}) => {
+const Sidebar = ({ children }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
   return (
     <div className="flex h-screen antialiased text-gray-900 bg-gray-300 dark:bg-dark dark:text-light">
       {/* Sidebar */}
@@ -68,7 +72,7 @@ const Sidebar = ({children}) => {
             
           </nav>
           <div className="flex-shrink-0 p-4">
-            <button className="flex items-center space-x-2">
+            <button onClick={handleLogout} className="flex items-center space-x-2">
               <svg
                 aria-hidden="true"
                 className="w-6 h-6"

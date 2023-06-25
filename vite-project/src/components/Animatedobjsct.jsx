@@ -7,9 +7,9 @@ function Animated() {
 
   
   return (
-    <div className=''>
-      <Lottie className='w-[100%]' animationData={anil}/>
-    </div>
+    
+      <Lottie className='w-[50%]' animationData={anil}/>
+    
   );
 }
 

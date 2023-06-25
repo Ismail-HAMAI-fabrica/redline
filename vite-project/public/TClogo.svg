@@ -3,39 +3,22 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FDB614;}
-	.st1{filter:url(#Adobe_OpacityMaskFilter);}
-	.st2{opacity:0.62;mask:url(#SVGID_1_);}
-	.st3{fill:#219EBC;}
-	.st4{filter:url(#Adobe_OpacityMaskFilter_1_);}
-	.st5{opacity:0.62;mask:url(#SVGID_2_);}
-	.st6{filter:url(#Adobe_OpacityMaskFilter_2_);}
-	.st7{opacity:0.62;mask:url(#SVGID_3_);}
+	.st0{fill:#FFB703;}
+	.st1{opacity:0.62;}
+	.st2{fill:#219EBC;}
 </style>
 <g>
 	<g>
 		<g>
 			<g>
-				<path class="st0" d="M84.8,207v64.9h52v80.3c0,0,1.7,158,167.8,142.8c0,0-93.6-27.6-103.7-142.8v-80.6h59.9V207H84.8z"/>
+				<path class="st0" d="M-1,34v101h78.7v125c0,0,2.6,246,254,222.3c0,0-141.7-43-157-222.3V134.6h90.7V34H-1z"/>
 			</g>
 		</g>
 	</g>
-	<defs>
-		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="84.8" y="207" width="219.8" height="289">
-			
-				<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
-		</filter>
-	</defs>
-	<mask maskUnits="userSpaceOnUse" x="84.8" y="207" width="219.8" height="289" id="SVGID_1_">
-		<g class="st1">
-			<image style="overflow:visible;" width="225" height="293" xlink:href="E704CAAE.jpg"  transform="matrix(1 0 0 1 82.3608 205)">
-			</image>
-		</g>
-	</mask>
-	<g class="st2">
+	<g class="st1">
 		<g>
 			<g>
-				<path d="M84.8,207v64.9h52v80.3c0,0,1.7,158,167.8,142.8c0,0-93.6-27.6-103.7-142.8v-80.6h59.9V207H84.8z"/>
+				<path class="st0" d="M-1,34v101h78.7v125c0,0,2.6,246,254,222.3c0,0-141.7-43-157-222.3V134.6h90.7V34H-1z"/>
 			</g>
 		</g>
 	</g>
@@ -44,26 +27,14 @@
 	<g>
 		<g>
 			<g>
-				<path class="st3" d="M340.7,484.8c0,0-66.4-6.1-100.8-62.8c0,0,52,30.8,98.7-13.9h76.5C415.2,408.1,400.4,456.2,340.7,484.8z"/>
+				<path class="st2" d="M387.1,466.5c0,0-100.7-9.5-152.9-97.8c0,0,78.9,48,149.7-21.6h116C500.2,347.1,477.7,422,387.1,466.5z"/>
 			</g>
 		</g>
 	</g>
-	<defs>
-		<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="240" y="408.1" width="175.2" height="76.7">
-			
-				<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
-		</filter>
-	</defs>
-	<mask maskUnits="userSpaceOnUse" x="240" y="408.1" width="175.2" height="76.7" id="SVGID_2_">
-		<g class="st4">
-			<image style="overflow:visible;" width="180" height="81" xlink:href="E704CAA9.jpg"  transform="matrix(1 0 0 1 237.3608 406)">
-			</image>
-		</g>
-	</mask>
-	<g class="st5">
+	<g class="st1">
 		<g>
 			<g>
-				<path d="M340.7,484.8c0,0-66.4-6.1-100.8-62.8c0,0,52,30.8,98.7-13.9h76.5C415.2,408.1,400.4,456.2,340.7,484.8z"/>
+				<path class="st2" d="M387.1,466.5c0,0-100.7-9.5-152.9-97.8c0,0,78.9,48,149.7-21.6h116C500.2,347.1,477.7,422,387.1,466.5z"/>
 			</g>
 		</g>
 	</g>
@@ -72,42 +43,16 @@
 	<g>
 		<g>
 			<g>
-				<path class="st3" d="M346,322.1h69.1c0,0-20.7-111.3-140-115.1v64.1C275.2,271.1,328.3,274.9,346,322.1z"/>
+				<path class="st2" d="M395.2,213.2H500c0,0-31.4-173.3-212.4-179.2v99.8C287.8,133.8,368.3,139.7,395.2,213.2z"/>
 			</g>
 		</g>
 	</g>
-	<defs>
-		<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="275.1" y="207" width="140" height="115.1">
-			
-				<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
-		</filter>
-	</defs>
-	<mask maskUnits="userSpaceOnUse" x="275.1" y="207" width="140" height="115.1" id="SVGID_3_">
-		<g class="st6">
-			
-				<image style="overflow:visible;" width="145" height="120" xlink:href="E704CAAB.jpg"  transform="matrix(1 0 0 1 272.3608 205)">
-			</image>
-		</g>
-	</mask>
-	<g class="st7">
+	<g class="st1">
 		<g>
 			<g>
-				<path d="M346,322.1h69.1c0,0-20.7-111.3-140-115.1v64.1C275.2,271.1,328.3,274.9,346,322.1z"/>
+				<path class="st2" d="M395.2,213.2H500c0,0-31.4-173.3-212.4-179.2v99.8C287.8,133.8,368.3,139.7,395.2,213.2z"/>
 			</g>
 		</g>
 	</g>
 </g>
-<path class="st3" d="M229.7,136.2c5.5-3.7,14.4-8.4,25.7-9c5.6-0.3,9.6,0.5,25.5,5.2c23.9,7,28,9.1,41.3,12.3
-	c18.5,4.5,26,4.3,29.5,4c6.6-0.4,15.1-1.1,23.9-6.6c10.1-6.3,14.6-15.2,16.1-18.2c1.6-3.2,10.6-21.6,0.9-39.9
-	c-1.2-2.2-8.2-15-23.9-19.6c-12.8-3.8-28-1.2-38,8.5c-5,4.8-7.5,10.1-8.7,13.5c11.1-12.6,28.1-16.7,41.6-10.6
-	c9.7,4.4,18.5,14.4,18.9,26.7c0.6,16.1-13.5,27.7-24.3,31.2c-5.7,1.8-11.2,1.5-22,0.9c-8.3-0.5-15.1-1.6-19.8-2.6
-	c-14.4-2-25.5-4.8-33.1-7.1c-5.1-1.5-8.9-2.8-15.1-3.5c-6.4-0.7-15.2-1.7-24.3,2.6C240.8,125.3,234.8,128.7,229.7,136.2z"/>
-<path class="st0" d="M332.6,149c1.2,0.1,1.2,18.5,0.1,55.2c-25.7-0.3-42.8-5.3-53.9-9.9c-2.8-1.2-7.1-3.2-13.7-5.2
-	c-10.5-3.2-23.3-7.2-37.8-3.8c-4.2,1-10.6,3.1-17.6,8c0.2-15.7,0.3-31.5,0.5-47.2c-37.6-1-64.9-24.3-66.9-49.1
-	c-1.7-20.9,15.1-36.5,16.5-37.8c16.9-15.2,43.4-17.7,66.6-5.7c9.7-17.4,27.7-28.3,47-28.3c1.2,0,30.3,0,42,20.6
-	c5.5,9.6,5.1,20.1,5,23.9c-0.4,10.7-4.1,18.7-6.4,22.9c0.5-2.1,4.8-20.9-8-36.1c-12.1-14.4-29.7-14.2-33.8-14.2
-	c-13.4,0.1-22.6,6.2-24.3,7.3c-10.4,7-14.6,16.5-16.1,20.1c-13-5.3-37-12.6-55.5-1.4c-1,0.6-1.9,1.2-2.8,1.9
-	c-12.4,9.1-15.1,31.3-6.6,43.2c1.5,2.2,3.2,3.6,6.6,6.6c1.1,1,7.3,6.3,15.9,10.6c12.8,6.4,25.5,7.7,32,8c0,12.8,0,25.7,0,38.5
-	c2.5-1.2,6.3-2.6,11.1-3.3c7.6-1.1,13.7,0.2,17.7,1.2c13.6,3.3,24.7,6.8,31.4,9c18,5.8,22.5,7.1,29.5,7.6c6.5,0.5,11.9,0,15.6-0.5
-	C329.6,162.9,331.5,149,332.6,149z"/>
 </svg>

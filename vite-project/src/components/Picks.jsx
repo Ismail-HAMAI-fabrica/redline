@@ -53,8 +53,8 @@ const Picks = () => {
 
   return (
     <div>
-      <div className="flex w-full mb-40 mt-40 bg-[#219EBC] flex-col">
-        <div className='flex gap-5 items-center pb-32 -px-16 flex-col'>
+      <div className="flex w-full  mt-40 bg-[#219EBC] flex-col">
+        <div className='flex gap-5 items-center pb-14 -px-16 flex-col'>
           <h1 className="-mt-16 z-40 font-bold text-white text-4xl xs:text-3lg md:text-5xl lg:text-6xl">How to Use?</h1>
           <img src="/lins.svg" alt="" className="w-[170%] absolute -mt-7 xs:-mt-14 md:-mt-16 lg:-mt-80" />
           <p className='w-[50%] z-10 text-white text-center text-base md:text-3xl'>Super easy, Simply follow these Instructions.</p>
