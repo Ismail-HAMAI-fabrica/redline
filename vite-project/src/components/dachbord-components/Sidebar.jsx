@@ -24,7 +24,7 @@ const Sidebar = ({ children }) => {
         {/* Curvy shape */}
         <svg
           className="absolute inset-0 w-full h-full text-white  ml-[-70px]"
-          style={{ filter: 'drop-shadow(10px 0 10px #00000030)' }}
+          style={{ filter: 'drop-shadow(15px 0 5px #00000030)' }}
           preserveAspectRatio="none"
           viewBox="0 0 309 800"
           fill="currentColor"
@@ -37,7 +37,7 @@ const Sidebar = ({ children }) => {
           <div className="flex items-center justify-between flex-shrink-0 w-64 p-4 ">
             {/* Logo */}
             <a href="#">
-            <img src="/TClogo.svg" alt="" className="h-[250px] w-auto " />
+            <img src="/TClogo.svg" alt="" className="h-[220px] w-auto " />
             </a>
             {/* Close btn */}
             <button

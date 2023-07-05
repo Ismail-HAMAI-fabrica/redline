@@ -26,6 +26,7 @@
     "@tanstack/react-query": "^4.29.7",
     "axios": "^1.4.0",
     "chart.js": "^4.3.0",
+    "firebase": "^9.23.0",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.4",
     "framer-motion": "^10.12.16",
@@ -43,6 +44,8 @@
     "sort-by": "^0.0.2",
     "styled-components": "^5.3.10",
     "tw-elements": "^1.0.0-beta2",
+    "uui": "^1.0.7",
+    "uuid": "^9.0.0",
     "vite-plugin-svgr": "^3.2.0"
   },
   "devDependencies": {

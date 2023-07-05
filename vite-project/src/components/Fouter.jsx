@@ -1,57 +1,32 @@
-// import { Typography } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
  
-// export default function Footer() {
-//   return (
-//     // <footer className=" w-full bg-[#8ECAE6] bottom-0 mb-0 p-8 ">
-//     //   <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
-//     //  <svg />
-//     //     <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-//     //       <li>
-//     //         <Typography
-//     //           as="a"
-//     //           href="#"
-//     //           color="blue-gray"
-//     //           className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-//     //         >
-//     //           About Us
-//     //         </Typography>
-//     //       </li>
-//     //       <li>
-//     //         <Typography
-//     //           as="a"
-//     //           href="#"
-//     //           color="blue-gray"
-//     //           className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-//     //         >
-//     //           License
-//     //         </Typography>
-//     //       </li>
-//     //       <li>
-//     //         <Typography
-//     //           as="a"
-//     //           href="#"
-//     //           color="blue-gray"
-//     //           className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-//     //         >
-//     //           Contribute
-//     //         </Typography>
-//     //       </li>
-//     //       <li>
-//     //         <Typography
-//     //           as="a"
-//     //           href="#"
-//     //           color="blue-gray"
-//     //           className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-//     //         >
-//     //           Contact Us
-//     //         </Typography>
-//     //       </li>
-//     //     </ul>
-//     //   </div>
-//     //   <hr className="my-8 border-blue-gray-50" />
-//     //   <Typography color="blue-gray" className="text-center font-normal">
-//     //     &copy; 2023 Material Tailwind
-//     //   </Typography>
-//     // </footer>
-//   );
-// }
+export default function Footer() {
+  return (
+    <footer>
+      <div className="flex  relative pt-0 flex-col align-middle">
+        <img className="absolute wave z-O  w-full drop-shadow-sm" src="/footerwave.svg" alt="" />
+        <div className="z-10 pt-14 pl-40"><h1 className='text-1xl sm:text-3xl md:text-4xl lg:text-6xl text-white font-bold'>Frech Food <br/><span className='absolute -rotate-45 with text-base sm:text-2xl md:text-3xl lg:text-5xl -pl-5 text-[#219EBC]'>With</span>&nbsp;&nbsp; TimeCook</h1></div>
+        <div className="h-[2px] mx-[10%]  z-10 mt-16 w-[80vw] bg-white"></div>
+        <footer className="site-footer z-30 mx-20">
+        <div className="footer-content">
+          <div className="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div className="footer-social">
+            <a href="#"><i className="fab fa-facebook-f"></i></a>
+            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#"><i className="fab fa-instagram"></i></a>
+            <a href="#"><i className="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2023 Recipe Website. All rights reserved.</p>
+        </div>
+      </footer>
+      </div>
+    </footer>
+  );
+}

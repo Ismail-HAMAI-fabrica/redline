@@ -35,7 +35,7 @@ export default function Nav() {
         }`}
       >
         <nav className="bg-transparent">
-          <div className="bg-transparent container mx-auto flex items-center justify-between">
+          <div className="bg-transparent  mx-auto flex items-center justify-between">
             <div>
               <button
                 data-collapse-toggle="mobile-menu"
@@ -45,24 +45,12 @@ export default function Nav() {
                 aria-expanded="false"
               >
                 <span className="sr-only">Open main menu</span>
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" className='fill-white' height="1em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
                   {/* Menu icon paths */}
-                </svg>
-                <svg
-                  className="hidden w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Close icon paths */}
-                </svg>
+                
+               
               </button>
-              <div className="hidden md:block w-full md:w-auto" id="mobile-menu">
+              <div className="hidden sm md:block w-full md:w-auto" id="mobile-menu">
                 <ul className=" justify-center md:justify-end flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
                   <li>
                     <a
@@ -94,7 +82,7 @@ export default function Nav() {
             </div>
 
             <a href="#" className="flex justify-center items-center">
-              <img src="/TClogo.svg" className="w-20 mr-[7.4rem]" alt="" />
+              <img src="/TClogo.svg" className="w-14  sm:w-16 md:w-20  ml-20 md:mr-24 lg:mr-48  " alt="" />
             </a>
 
             {token ? (

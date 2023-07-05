@@ -2,8 +2,6 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import docs from './swagger.js'; // import the docs object from swagger.js
 import cors from 'cors';
-import path , {dirname} from 'path';
-import { fileURLToPath } from 'url';
 import corsOptions from './config/corsOptions.js';
 
 
@@ -29,9 +27,7 @@ import routes from './routes/routes.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use('/images', express.static(path.join(__dirname,'images')));
+
 
 // Get the database URL from .env file
 const mongoString = process.env.DATABASE_URL;

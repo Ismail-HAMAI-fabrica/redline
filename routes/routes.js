@@ -4,9 +4,9 @@ import express from 'express';
 import { VerifyToken, isAdmin, isCustomer } from '../middlewares/auth.middleware.js';
 import authRouter from './auth.routes.js';
 import { createOrder } from '../controllers/ordercontrollers.js';
-import { createRecipe } from '../controllers/recipescontrollers.js';
+import { createRecipe, getAllRecipes, searchRecipes } from '../controllers/recipescontrollers.js';
 import { createFactur } from '../controllers/facturcontroller.js';
-import multer from '../middlewares/multer-cfg.js';
+
 
 const router = express.Router();
 
@@ -15,8 +15,10 @@ router.use('/auth', authRouter);
 router.post('/order/:id',VerifyToken,isCustomer, createOrder);
 
 
-
-router.post('/createRecipe',VerifyToken,isAdmin,multer,createRecipe);
+ 
+router.post('/createRecipe',VerifyToken,isAdmin,createRecipe);
+router.get('/getAllRecipes',getAllRecipes);
+router.get('/searchRecipes/:query/:difficulty?',searchRecipes);
 
 
 
@@ -25,7 +27,7 @@ router.post('/createFactur/:id',VerifyToken,isAdmin,createFactur);
 
 
 export default router;
-
+ 
 
 
  

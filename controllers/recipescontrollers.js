@@ -7,10 +7,15 @@ export const createRecipe = async (req, res) => {
       description,
       ingredients,
       instructions,
+      image,
       price,
       difficulty
     } = req.body;
-    const imageUrl = req.file ? `${req.protocol}://${req.get('host')}/images/${req.file.filename}`:null;
+
+    // Validate the required fields
+    if (!title || !description || !ingredients || !instructions || !difficulty) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
 
     // Create a new recipe document
     const recipe = new Recipe({
@@ -18,7 +23,7 @@ export const createRecipe = async (req, res) => {
       description,
       ingredients,
       instructions,
-      image : imageUrl,
+      image,
       price,
       difficulty
     });
@@ -28,6 +33,7 @@ export const createRecipe = async (req, res) => {
 
     res.status(201).json(recipe);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Internal server error' });
   }
 };
@@ -36,6 +42,32 @@ export const createRecipe = async (req, res) => {
 export const getAllRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find();
+    res.json(recipes);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+export const searchRecipes = async (req, res) => {
+  try {
+    const { query, difficulty } = req.params;
+
+    // Create a search query object
+    const searchQuery = {
+      $or: [
+        { title: { $regex: query, $options: 'i' } }, // Search by title (case-insensitive)
+        { description: { $regex: query, $options: 'i' } }, // Search by description (case-insensitive)
+      ],
+    };
+
+    // Add difficulty filter if provided
+    if (difficulty) {
+      searchQuery.difficulty = difficulty;
+    }
+
+    // Perform the search query
+    const recipes = await Recipe.find(searchQuery);
+
     res.json(recipes);
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });

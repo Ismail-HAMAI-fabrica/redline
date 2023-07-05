@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { PhotoIcon } from '@heroicons/react/24/solid'
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+
+} from "firebase/storage";
+import { storage } from "../../firebase";
+import { v4 } from "uuid";
 
 const CreateRecipeForm = () => {
+  const [imageUpload, setImageUpload] = useState(null);
+
+
     const [recipe, setRecipe] = useState({
       title: '',
       description: '',
       ingredients: [],
       instructions: [],
-      image: '',
+      image: '' ,
       price: 0,
       difficulty: '',
     });
+   
   
     const handleInputChange = (event) => {
       const { name, value } = event.target;
@@ -32,18 +44,45 @@ const CreateRecipeForm = () => {
       setRecipe({ ...recipe, instructions: updatedInstructions });
     };
   
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
       event.preventDefault();
-       
-      axios.post('http://localhost:3000/api/createRecipe', recipe)
+    
+      const token = localStorage.getItem('token');
+    
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+    
+      const imageFile = document.getElementById('image-input').files[0];
+      if (imageFile == null) return;
+    
+      const imageUrl = await uploadImage(imageFile);
+    
+      const updatedRecipe = {
+        ...recipe,
+        image: imageUrl,
+      };
+    
+      axios.post('http://localhost:3000/api/createRecipe', updatedRecipe, { headers })
         .then((response) => {
-          // Handle the response if needed
+          // Handle the response or perform any necessary actions
         })
         .catch((error) => {
-          // Handle errors if any
+          // Handle the error
         });
     };
-  
+    
+    const uploadImage = (file) => {
+      return new Promise((resolve, reject) => {
+        const imageRef = ref(storage, `images/${file.name + v4()}`);
+      
+        uploadBytes(imageRef, file)
+          .then((snapshot) => getDownloadURL(snapshot.ref))
+          .then((url) => resolve(url))
+          .catch((error) => reject(error));
+      });
+    };
+    
     const addIngredient = () => {
       setRecipe({
         ...recipe,
@@ -185,10 +224,8 @@ const CreateRecipeForm = () => {
                     >
                     
                       <input type="file"
-                                name="image"
-                                value={recipe.image}
-                                onChange={handleInputChange}
-                                required />
+                              id='image-input' />
+                     
                     </label>
                   </div>
                 </div>

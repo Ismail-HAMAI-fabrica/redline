@@ -48,7 +48,7 @@ import { Tilt } from 'react-tilt';
         <Tilt > <div className="card">
         <div className="flex flex-col first-content">
             <img src="/food.png" alt="" className="w-[100px]" />
-            <span className='text-center '>Quick and Easy Meals </span>
+            <span className='text-center'>Quick and Easy Meals </span>
         </div>
         <div className="fle second-content">
         <p className='font-medium solle text-center text-base '>They require minimal prep and cooking time, using simple ingredients.making cleanup a breeze. Enjoy delicious, homemade meals</p>

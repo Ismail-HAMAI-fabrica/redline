@@ -17,8 +17,7 @@ const recipeSchema = new Schema({
       required: true,
     },
     quantity: {
-      type: String,
-      required: true,
+      type: String
     },
   }],
   instructions: [{
@@ -29,7 +28,7 @@ const recipeSchema = new Schema({
   }],
   image: {
     type: String,
-    required: true,
+    
   },
   price: {
     type: Number,
