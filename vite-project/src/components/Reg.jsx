@@ -43,12 +43,12 @@ function Reg() {
 
   return (
     <>
-           <div className="bg-[#023047] flex flex-col justify-center gap-y-10 overflow-hidden ">
-            <div className="flex justify-between px-9 -ml-6 mt-5 items-center">
-            <button onClick={() => navigate('/')} className="btn -ml-24 flex-1">
-            <svg className='fill-white  rounded-full w-11 hover:fill-[#FFB703] ' xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-            </button>
-           <img src="/TClogo.svg" className='h-32 -mt-3  flex-1 text-center' />
+           <div className="bg-[#023047] flex flex-col justify-center gap-y-10  ">
+    <div className="flex  justify-between  px-8   items-center">
+    <button onClick={() => navigate('/')} className="btn  flex-1">
+    <svg className='fill-white  rounded-full w-8 hover:fill-[#FFB703]' xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+    </button>
+           <img src="/TClogo.svg" className='h-16   flex-1 text-center' />
            <button onClick={() => navigate('/login')} className="nav-button flex-1 flex justify-end flex-row   items-center cta">
                 <span className="hover-underline-animation"> Loge-IN </span>
                 <svg className='fill-white -mt-2' viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -60,9 +60,9 @@ function Reg() {
                     <section className=' relative block  lg:pt-0 bg-[#023047]'>
                       <div className="container mx-auto px-4">
                           <div className="flex flex-wrap justify-items-stretch  ">
-                            <div className=" pt-6 flex flex-wrap justify-between w-full ">
+                            <div className=" pt-6 flex flex-wrap justify-evenly w-full ">
                             <Animated />
-                              <div className="relative bg-white flex flex-col mr-16  break-words w-[400px] mb-6 shadow-lg rounded-lg bg-blueGray-200">
+                              <div className="relative bg-white flex flex-col   break-words w-[400px] mb-6 shadow-lg rounded-lg bg-blueGray-200">
                                     <div className="flex-auto w-[100%] p-5 ">
                                       <h4 className="text-2xl font-semibold">Registration Form</h4>
                                     <div className="relative w-full mb-3 mt-8">

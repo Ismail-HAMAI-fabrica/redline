@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import CreateRecipeForm from './Recipesform';
 import axios from 'axios';
 
+
 const Recipes = () => {
   const [open, setOpen] = useState(false);
 
@@ -20,6 +21,20 @@ const Recipes = () => {
       setRecipes(response.data);
     } catch (error) {
       console.error(error);
+    }
+  };
+ 
+  const deleteRecipe = async (recipeId) => {
+    try {
+      const token = localStorage.getItem('token');
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      await axios.delete(`http://localhost:3000/api/deleteRecipe/${recipeId}`, { headers });
+      console.log('Recipe deleted successfully!');
+      fetchRecipes(); // Fetch updated recipes after successful deletion
+    } catch (error) {
+      console.error('Error deleting recipe:', error);
     }
   };
 
@@ -142,9 +157,9 @@ const Recipes = () => {
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase"
+                    className="px-6 py-3 text-xs font-bold text-center text-gray-500 uppercase"
                   >
-                    Edit
+                    Date
                   </th>
                   <th
                     scope="col"
@@ -155,35 +170,36 @@ const Recipes = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-slate-100">
-                {recipes.map((recipe) => (
-                  <tr key={recipe._id}>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                      {recipe.difficulty}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                      {recipe.title}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                      {recipe.price}
-                    </td>
-                    <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                      <a
-                        className="text-green-500 hover:text-green-700"
-                        href="#"
-                      >
-                        Edit
-                      </a>
-                    </td>
-                    <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                      <a
-                        className="text-red-500 hover:text-red-700"
-                        href="#"
-                      >
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                ))}
+              {recipes.map((recipe) => (
+                                <tr key={recipe._id}>
+                                  <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                                    {recipe.difficulty}
+                                  </td>
+                                  <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                                    {recipe.title}
+                                  </td>
+                                  <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                                    {recipe.price}
+                                  </td>
+                                  <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                                    <a className="text-green-500 hover:text-green-700" href="#">
+                                      {recipe.createdAt}
+                                    </a>
+                                  </td>
+                                  <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                                  <a
+                                      className="text-red-500 hover:text-red-700"
+                                      href="#"
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        deleteRecipe(recipe._id);
+                                      }}
+                                    >
+                                      Delete
+                                    </a>
+                                  </td>
+                                </tr>
+                              ))}
               </tbody>
             </table>
           </div>

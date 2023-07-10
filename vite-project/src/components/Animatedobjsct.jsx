@@ -8,7 +8,7 @@ function Animated() {
   
   return (
     
-      <Lottie className='w-[50%]' animationData={anil}/>
+      <Lottie className='w-[30%]' animationData={anil}/>
     
   );
 }

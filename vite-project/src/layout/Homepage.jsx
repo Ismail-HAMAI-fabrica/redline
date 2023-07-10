@@ -5,6 +5,7 @@ import  About  from '../components/About'
 import Forstarter from '../components/Forstarter'
 import Picks from '../components/Picks'
 import Footer from '../components/Fouter'
+import Feedback from '../components/Feedback'
 
 
 const Homepage = () => {
@@ -14,6 +15,7 @@ const Homepage = () => {
       <About/>
       <Forstarter/>
       <Picks/>
+      <Feedback/>
       <Footer/>
     </>
   )

@@ -11,7 +11,8 @@ import { storage } from "../../firebase";
 import { v4 } from "uuid";
 
 const CreateRecipeForm = () => {
-  const [imageUpload, setImageUpload] = useState(null);
+
+  const [successMessage, setSuccessMessage] = useState('');
 
 
     const [recipe, setRecipe] = useState({
@@ -46,26 +47,36 @@ const CreateRecipeForm = () => {
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
-    
+  
       const token = localStorage.getItem('token');
-    
+  
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-    
+  
       const imageFile = document.getElementById('image-input').files[0];
       if (imageFile == null) return;
-    
+  
       const imageUrl = await uploadImage(imageFile);
-    
+  
       const updatedRecipe = {
         ...recipe,
         image: imageUrl,
       };
-    
-      axios.post('http://localhost:3000/api/createRecipe', updatedRecipe, { headers })
+  
+      axios
+        .post('http://localhost:3000/api/createRecipe', updatedRecipe, { headers })
         .then((response) => {
-          // Handle the response or perform any necessary actions
+          setSuccessMessage('Recipe created successfully!');
+          setRecipe({
+            title: '',
+            description: '',
+            ingredients: [],
+            instructions: [],
+            image: '',
+            price: 0,
+            difficulty: '',
+          });
         })
         .catch((error) => {
           // Handle the error
@@ -257,7 +268,8 @@ const CreateRecipeForm = () => {
                         onChange={handleInputChange}
                         required
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                    >
+                    >     
+                        <option  value=""  disabled>Select Difficuty</option>
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>
@@ -272,6 +284,9 @@ const CreateRecipeForm = () => {
         >
           Save
         </button>
+        {successMessage && (
+        <div className="mt-4 text-green-600">{successMessage}</div>
+      )}
         </div>
       </form>
     );

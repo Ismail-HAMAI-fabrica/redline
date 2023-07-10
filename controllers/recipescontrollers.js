@@ -48,6 +48,19 @@ export const getAllRecipes = async (req, res) => {
   }
 };
 
+export const bergursRecipes = async (req, res) => {
+  try {
+    const keyword = "Burger"; // Get the keyword from the request query
+
+    // Use the Recipe model to perform the search
+    const recipes = await Recipe.find({ title: { $regex: keyword, $options: 'i' } });
+
+    res.status(200).json({ recipes });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while searching for recipes.' });
+  }
+};
+
 export const searchRecipes = async (req, res) => {
   try {
     const { query, difficulty } = req.params;
@@ -132,6 +145,7 @@ export const updateRecipeById = async (req, res) => {
 export const deleteRecipeById = async (req, res) => {
   try {
     const { recipeId } = req.params;
+    console.log(recipeId);
     const recipe = await Recipe.findByIdAndDelete(recipeId);
 
     if (!recipe) {

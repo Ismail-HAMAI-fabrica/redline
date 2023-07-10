@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 
 const Sidebar = ({ children }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -13,6 +14,15 @@ const Sidebar = ({ children }) => {
     localStorage.removeItem('token');
     navigate('/login');
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+  
+    if (!token) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   return (
     <div className="flex h-screen antialiased text-gray-900 bg-gray-300 dark:bg-dark dark:text-light">
       {/* Sidebar */}
