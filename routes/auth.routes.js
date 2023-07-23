@@ -9,4 +9,5 @@ authRouter.get('/all', getAllUsers);
 authRouter.post('/login', login);
 authRouter.delete('/delete/user/:id', deleteUser);
 
+
 export default authRouter;

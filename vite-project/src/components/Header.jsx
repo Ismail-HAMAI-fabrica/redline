@@ -82,7 +82,7 @@ export default function Nav() {
             </div>
 
             <a href="#" className="flex justify-center items-center">
-              <img src="/TClogo.svg" className="w-14  sm:w-16 md:w-20  ml-20 md:mr-24 lg:mr-48  " alt="" />
+              <img src="/TClogo.svg" className="w-8 py-1 sm:w-10 md:w-14 ml-20 md:mr-24 lg:mr-48" alt="" />
             </a>
 
             {token ? (

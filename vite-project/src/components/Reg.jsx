@@ -32,6 +32,7 @@ function Reg() {
       });
 
       const { email: registeredEmail, token } = response.data;
+      localStorage.setItem('token', token);
       console.log('Registered email:', registeredEmail);
       console.log('Token:', token);
       navigate('/');

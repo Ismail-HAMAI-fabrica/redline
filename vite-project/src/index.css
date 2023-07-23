@@ -10,14 +10,13 @@
     
       font-family: 'Calligraffitti', cursive;
       font-weight: 700;
-      font-size: 13rem;
-      position: absolute;
+      font-size: 3rem;
+      right: -40px;
+      top: 0;
+      rotate: -30deg;
       text-shadow: -15px 5px 20px #ced0d3;
-      top: 50%;
-      left: 50%;
       transform: translate(-50%,-50%);
       letter-spacing: 0.02em;
-      text-align: center;
       color: #F9f1cc;
       text-shadow: 5px 5px 0px #FFB650, 
         10px 10px 0px #FFD662, 
@@ -27,6 +26,8 @@
         30px 30px 0px #90B1E0;
     
   }
+
+  
 .with {
     font-family: 'Brush Script MT', cursive;
   }
@@ -637,4 +638,143 @@ font-family: 'Josefin Sans', sans-serif;
       transform: scale(1);
     }
   }
+  
+
+
+  /* ______________________________________________________________ */
+  .feedbacktextt {
+    color: white; 
+      font-family: 'Helvetica Neue', sans-serif;  
+       font-size: 2rem; 
+       font-weight: bold; 
+       letter-spacing: -1px;
+        line-height: 1;
+         text-align: center;
+  }
+
+
+  .feedbutton {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 22px;
+    border-radius: 5%;
+    background: rgba(255, 183, 3, 0.2);
+    cursor: pointer;
+    user-select: none;
+    font-weight: bolder;
+    overflow: hidden;
+    color: #023047;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  
+  .feedbutton span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid #FFB703;
+  }
+  
+  .feedbutton span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: #219EBC;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+  }
+  
+  .feedbutton:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: #023047;
+  }
+  
+  .feedbutton:hover {
+    color: white;
+  }
+  
+  .feedbutton:active span::before {
+    background: #2751cd;
+  }
+
+  .rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #219EBC;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #FB8500;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: #FB8500;
+  }
+  
+  .rating > input:checked ~ label {
+    color: #FFB703;
+  }
+  
+  /* _______________________________ */
+  .rating2:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating2:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    color: #219EBC;
+  }
+  
+  .rating2:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating2 > input:checked + label:hover,
+  .rating2 > input:checked + label:hover ~ label,
+  .rating2 > input:checked ~ label:hover,
+  .rating2 > input:checked ~ label:hover ~ label,
+  .rating2 > label:hover ~ input:checked ~ label {
+    color: #FB8500;
+  }
+  
+  .rating2:not(:checked) > label:hover,
+  .rating2:not(:checked) > label:hover ~ label {
+    color: #FB8500;
+  }
+  
+  .rating2 > input:checked ~ label {
+    color: #FFB703;
+  }
+  
+  
   
