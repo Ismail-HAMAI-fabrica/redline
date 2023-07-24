@@ -11,6 +11,7 @@ import Recipes from './components/dachbord-components/Recipes';
 import Adminscreen from './components/dachbord-components/Adminscreen';
 import Reg from './components/Reg';
 import Login from './components/Logein';
+import { Gallery } from './layout/Gallery';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path='/signIn' element={<Reg/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/dach' element={<AdminPage/>}/>
+            <Route path='/gallery' element={<Gallery/>}/>
                     {/* adminpage */}
         <Route path='/dashboard' element={<Dachbord/>}>
             <Route path='/dashboard/' element={<Adminscreen/>}/>

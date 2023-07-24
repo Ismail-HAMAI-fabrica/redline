@@ -4,6 +4,8 @@ import { Dialog, Transition } from '@headlessui/react';
 import CreateRecipeForm from './Recipesform';
 import axios from 'axios';
 
+const ITEMS_PER_PAGE = 8;
+
 
 const Recipes = () => {
   const [open, setOpen] = useState(false);
@@ -36,6 +38,21 @@ const Recipes = () => {
     } catch (error) {
       console.error('Error deleting recipe:', error);
     }
+  };
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const indexOfLastRecipe = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstRecipe = indexOfLastRecipe - ITEMS_PER_PAGE;
+  const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+
+  const totalPages = Math.ceil(recipes.length / ITEMS_PER_PAGE);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
   };
 
   return (
@@ -170,7 +187,7 @@ const Recipes = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-slate-100">
-              {recipes.map((recipe) => (
+              {currentRecipes.map((recipe)=> (
                                 <tr key={recipe._id}>
                                   <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
                                     {recipe.difficulty}
@@ -204,6 +221,22 @@ const Recipes = () => {
             </table>
           </div>
         </div>
+        <div className="mt-4 flex justify-center">
+        <button
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          className="px-4 py-2 bg-[#219EBC] text-white rounded mr-2"
+        >
+          Prev Page
+        </button>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 bg-[#219EBC] text-white rounded"
+        >
+          Next Page
+        </button>
+      </div>
       </div>
       </div>
     );

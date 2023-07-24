@@ -64,7 +64,7 @@ const Picks = () => {
 
   return (
     <div>
-      <div className="flex w-full mt-40 bg-[#219EBC] flex-col">
+      <div className="flex w-full mr-0 mt-40 bg-[#219EBC] flex-col">
         <div className="flex gap-5 items-center pb-14 -px-16 flex-col">
           <h1 className="-mt-16 z-40 font-bold text-white text-4xl xs:text-3lg md:text-5xl lg:text-6xl">
             Fast and Flavorful Food on the Go
@@ -75,12 +75,12 @@ const Picks = () => {
             you coming back for more.
           </p>
 
-          <div className="flex flex-wrap   mt-6   justify-items-stretch">
+          <div className="flex flex-wrap gap-2 mr-0  w-full mt-6 items-center  justify-between">
             <div className="flex flex-col relative ml-16 items-center   gap-y-4">
               <ImageContainer>
              
               {selectedRecipe ? (
-                  <img src={selectedRecipe.image}  className=" fadein w-[350px] drop-shadow-2xl"  />
+                  <img src={selectedRecipe.image}  className=" fadein w-[40%] drop-shadow-2xl"  />
                   
                 ) : (
                   <img src="/berger 1.png"  className="w-[350px] drop-shadow-2xl" />
@@ -99,7 +99,7 @@ const Picks = () => {
               </p>
             </div>
            
-            <div className='flex flex-col justify-start gap-y-7'>
+            <div className='flex ml-auto mr-0 flex-col justify-start gap-y-7'>
             {recipes.map((recipe) => (
               <div className="cardFast   rounded-l-full z-10">
                 <div className="contentFast  flex justify-start gap-x-5 align-middle items-center"  onClick={() => handleCardClick(recipe)} >

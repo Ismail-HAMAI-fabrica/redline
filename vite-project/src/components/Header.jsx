@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'tw-elements';
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -52,27 +52,27 @@ export default function Nav() {
               </button>
               <div className="hidden sm md:block w-full md:w-auto" id="mobile-menu">
                 <ul className=" justify-center md:justify-end flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-                  <li>
-                    <a
-                      href="#"
-                      className="md:bg-transparent font-bold text-white block pl-3 pr-4 py-2 md:text-[#219EBC] md:p-0 rounded focus:text-[#219EBC] text-lg"
+                  <li className='cta '>
+                    <Link
+                      to='/'
+                      className=" md:bg-transparent hover-underline-animation font-bold text-white block pl-3 pr-4   md:p-0 rounded  text-lg"
                       aria-current="page"
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
-                  <li>
+                  <li className='cta '>
+                  <Link
+                    to="/gallery"
+                    className="text-white text-lg hover-underline-animation hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4   md:p-0"
+                  >
+                    Gallery
+                  </Link>
+                  </li>
+                  <li className='cta  '>
                     <a
                       href="#"
-                      className="text-white text-lg hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-[#219EBC] md:p-0"
-                    >
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-white text-lg hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-[#219EBC] md:p-0"
+                      className="text-white text-lg hover-underline-animation hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4   md:p-0"
                     >
                       Pricing
                     </a>
