@@ -46,6 +46,12 @@ const recipeSchema = new Schema({
   },
 });
 
+recipeSchema.index({ title: 'text' });
+recipeSchema.statics.findByDifficulty = function (difficulty) {
+  return this.find({ difficulty: difficulty });
+};
+
+
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
 export default Recipe;

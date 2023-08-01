@@ -24,8 +24,8 @@ const Sidebar = ({ children }) => {
   }, [navigate]);
 
   return (
-    <div className="flex h-screen antialiased text-gray-900 bg-gray-300 dark:bg-dark dark:text-light">
-      {/* Sidebar */}
+    <div className="flex relative h-screen antialiased text-gray-900 bg-gray-300 dark:bg-dark dark:text-light">
+       
       <div
         className={`fixed inset-y-0 z-10 flex w-80 duration-1000 ${
           isSidebarOpen ? '' : '-translate-x-full'

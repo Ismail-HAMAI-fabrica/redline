@@ -1,4 +1,5 @@
 import Recipe from "../models/recipes.js";
+
 // Create a new recipe
 export const createRecipe = async (req, res) => {
   try {
@@ -61,31 +62,7 @@ export const bergursRecipes = async (req, res) => {
   }
 };
 
-export const searchRecipes = async (req, res) => {
-  try {
-    const { query, difficulty } = req.params;
 
-    // Create a search query object
-    const searchQuery = {
-      $or: [
-        { title: { $regex: query, $options: 'i' } }, // Search by title (case-insensitive)
-        { description: { $regex: query, $options: 'i' } }, // Search by description (case-insensitive)
-      ],
-    };
-
-    // Add difficulty filter if provided
-    if (difficulty) {
-      searchQuery.difficulty = difficulty;
-    }
-
-    // Perform the search query
-    const recipes = await Recipe.find(searchQuery);
-
-    res.json(recipes);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
 
 // Get a recipe by ID
 export const getRecipeById = async (req, res) => {
@@ -156,4 +133,39 @@ export const deleteRecipeById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
+};
+
+export const searchRecipesByTitleHandler = async (req, res) => {
+  const { searchQuery } = req.params;
+  try {
+    console.log('Search Query:', searchQuery);
+
+    const recipes = await Recipe.find({ $text: { $search: searchQuery } });
+    console.log('Search Results:', recipes);
+
+    res.json(recipes);
+  } catch (error) {
+    console.error(error); // Log the error for debugging purposes
+    res.status(500).json({ error: 'Error occurred while searching for recipes' });
+  }
+};
+
+export const getRecipesByDifficulty = async (req, res) => {
+  const { difficulty } = req.params;
+  try {
+    const recipes = await Recipe.findByDifficulty(difficulty);
+    res.json(recipes);
+  } catch (error) {
+    console.error(error); // Log the error for debugging purposes
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+export const getRecipesAlph = async (req, res) => {
+  try {
+    const recipes = await Recipe.find().sort({ title: 1 }); 
+    res.json(recipes);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  } 
 };

@@ -3,9 +3,9 @@
 import express, { Router } from 'express';
 import { VerifyToken, isAdmin, isCustomer } from '../middlewares/auth.middleware.js';
 import authRouter from './auth.routes.js';
-import { createOrder } from '../controllers/ordercontrollers.js';
-import { bergursRecipes, createRecipe, deleteRecipeById, getAllRecipes, searchRecipes } from '../controllers/recipescontrollers.js';
-import { createFactur } from '../controllers/facturcontroller.js';
+import { createOrder, deleteOrder, getOrdersOfTheDay } from '../controllers/ordercontrollers.js';
+import { bergursRecipes, createRecipe, deleteRecipeById, getAllRecipes, getRecipesAlph,  getRecipesByDifficulty, searchRecipesByTitleHandler } from '../controllers/recipescontrollers.js';
+import { createFactur, getFacturById } from '../controllers/facturcontroller.js';
 import { createFeedback, getAllFeedback } from '../controllers/feedbackcontrollers.js';
 
 
@@ -14,6 +14,9 @@ const router = express.Router();
 router.use('/auth', authRouter);
 // POST route for creating a new order and generating a factur
 router.post('/order/:id',VerifyToken,isCustomer, createOrder);
+router.get('/getOrdersOfTheDay',VerifyToken,isAdmin,getOrdersOfTheDay)
+router.delete('/deleteOrder/:id',VerifyToken,isAdmin,deleteOrder)
+
 
 
 //  ----------------------------
@@ -21,7 +24,11 @@ router.post('/createRecipe',VerifyToken,isAdmin,createRecipe);
 router.delete('/deleteRecipe/:recipeId', VerifyToken, isAdmin, deleteRecipeById);
 router.get('/getAllRecipes',getAllRecipes);
 router.get('/bergursRecipes',bergursRecipes);
-router.get('/searchRecipes/:query/:difficulty?',searchRecipes);
+router.get('/searchRecipesByTitle/:searchQuery',searchRecipesByTitleHandler);
+router.get('/getRecipesAl',getRecipesAlph);
+router.get('/getRecipesByDiffi/:difficulty',getRecipesByDifficulty)
+
+
 
 
 // ---------------------------------
@@ -33,7 +40,8 @@ router.get('/getAllFeedback',getAllFeedback)
 
 
 
-router.post('/createFactur/:id',VerifyToken,isAdmin,createFactur);
+router.put('/createFactur/:id',VerifyToken,isAdmin,createFactur);
+router.get('/getFacturById',getFacturById)
 
 
 export default router;

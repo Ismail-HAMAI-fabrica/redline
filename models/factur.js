@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 
 const facturSchema = new Schema({
 orderid: { type: ObjectId, required: true },
+recipeid: { type: ObjectId, required: true },
 addres: { type: String, required: true },
 phonnumber: { type: String, required: true },
 items: [

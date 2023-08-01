@@ -5,37 +5,62 @@ import User from "../models/profiles.js";
 // Create a new factur
 export const createFactur = async (req, res) => {
   try {
-    const profilid = req.user.id;
     const orderid = req.params.id;
     const order = await Order.findById(orderid);
-    const mult = order.mult
-    const price = order.price
-    
-    const tax = 400
-    // Calculate the total
-    const total = mult * price + tax;
 
-    const profil = await User.findById(profilid);
+    if (!order) {
+      return res.status(404).json({ error: "Order not found" });
+    }
+
+    const price = order.price;
+    const recipeid = order.recipeid;
+    const tax = 400;
+    // Calculate the total
+    const total = price + tax;
+
+    const profil = await User.findById(order.profileid);
+    
+    if (!profil) {
+      return res.status(404).json({ error: "User profile not found" });
+    }
+
     const phonnumber = profil.phonnumber;
     const addres = profil.localisation;
 
     // Create a new factur document
     const factur = new Factur({
       orderid,
+      recipeid,
       addres,
       phonnumber,
       items: {
         price,
-        mult
+        mult: 1, // If you have a "mult" value in the order, you can use it here.
       },
       tax,
-      total
+      total,
     });
 
     // Save the factur to the database
     await factur.save();
 
     res.status(201).json(factur);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+export const getFacturById = async (req, res) => {
+  try {
+    const facturId = req.params.id;
+
+    // Find the factur in the database by its ID
+    const factur = await Factur.findById(facturId);
+
+    if (!factur) {
+      return res.status(404).json({ error: "Factur not found" });
+    }
+
+    res.json(factur);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

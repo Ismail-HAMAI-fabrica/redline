@@ -1,16 +1,17 @@
 import Order from '../models/order.js';
+import User from '../models/profiles.js';
 import Recipe from '../models/recipes.js'
 
 // Create a new order
 export const createOrder = async (req, res) => {
   try {
     const  profilid  = req.user.id;
-    console.log(profilid);
     const  recipesid  = req.params.id;
-    console.log(recipesid);
+    const amil = req.body.mult
 
     const recipe = await Recipe.findById(recipesid);
-    const price = recipe.price;
+    const price1 = recipe.price;
+    const price =  price1 * amil
     console.log(price);
 
     const order = new Order({
@@ -27,6 +28,42 @@ export const createOrder = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+export const getOrdersOfTheDay = async (req, res) => {
+  try {
+    // Get the current date and set the time to midnight (start of the day)
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    // Get the orders with 'addedAt' greater than or equal to the current date
+    const orders = await Order.find({ addedAt: { $gte: currentDate } });
+
+    // Create an array to hold the processed orders with user data
+    const processedOrders = [];
+
+    // Fetch user data for each order
+    for (const order of orders) {
+      const { profileid, ...orderData } = order.toObject();
+
+      // Fetch user data from the User model based on the profileid
+      const user = await User.findById(profileid);
+
+      // Extract the required user fields
+      const { phonnumber, localisation, username } = user;
+
+      // Add the user data to the orderData object
+      const orderWithUserData = { ...orderData, phonnumber, localisation, username };
+      
+      // Add the order with user data to the processedOrders array
+      processedOrders.push(orderWithUserData);
+    }
+
+    res.json(processedOrders);
+  } catch (error) {
+    console.error('Error fetching orders:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 
 
 // Get all orders

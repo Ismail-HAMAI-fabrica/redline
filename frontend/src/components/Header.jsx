@@ -37,21 +37,9 @@ export default function Nav() {
         <nav className="bg-transparent">
           <div className="bg-transparent  mx-auto flex items-center justify-between">
             <div>
-              <button
-                data-collapse-toggle="mobile-menu"
-                type="button"
-                className="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-                aria-controls="mobile-menu-2"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className='fill-white' height="1em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-                  {/* Menu icon paths */}
-                
-               
-              </button>
-              <div className="hidden sm md:block w-full md:w-auto" id="mobile-menu">
-                <ul className=" justify-center md:justify-end flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+              
+              <div className=" sm  w-full md:w-auto" id="mobile-menu">
+                <ul className=" justify-center md:justify-end  flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
                   <li className='cta '>
                     <Link
                       to='/'
@@ -69,14 +57,7 @@ export default function Nav() {
                     Gallery
                   </Link>
                   </li>
-                  <li className='cta  '>
-                    <a
-                      href="#"
-                      className="text-white text-lg hover-underline-animation hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4   md:p-0"
-                    >
-                      Pricing
-                    </a>
-                  </li>
+              
                 </ul>
               </div>
             </div>
